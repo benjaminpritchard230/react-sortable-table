@@ -1,3 +1,8 @@
+/* 
+  =================
+  Table
+  =====================
+  */
 * {
   box-sizing: border-box;
 }
@@ -6,42 +11,71 @@ body {
   color: #383f4d;
   line-height: 1.5;
   font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
-/* 
-=================
-Table
-=====================
-*/
-
 .table_container {
-  max-width: 750px;
-  /* max-height: 500px; */
-  margin: 0 auto;
-  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80vw;
+}
+@media (max-width: 768px) {
+  .table_container {
+    max-width: 100vw;
+  }
+}
+@media (min-width: 768px) {
+  .table_container {
+    max-width: 100vw;
+  }
+}
+@media (min-width: 1280px) {
+  .table_container {
+    max-width: 85vw;
+  }
+}
+@media (min-width: 1920px) {
+  .table_container {
+    max-width: 70vw;
+  }
 }
 
 .table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
   width: 100%;
-  border-spacing: 0;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  table-layout: fixed;
 }
-
-caption {
-  font-style: italic;
-  font-size: 90%;
-  margin-bottom: 10px;
-}
-
-.table th {
-  background: #fff;
-  padding: 8px 10px;
-  border-bottom: 1px solid #1a1a1a;
-  font-weight: bold;
+.table thead tr {
+  background-color: #126da6;
+  color: #ffffff;
   text-align: left;
+  font-weight: bold;
 }
-
+.table th {
+  padding: 12px 15px;
+}
+.table td {
+  padding: 12px 15px;
+}
+.table tbody tr {
+  border-bottom: 1px solid #f6f6ff;
+}
+.table tbody tr:nth-of-type(even) {
+  background-color: #e7f0f6;
+}
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #126da6;
+}
+.table tbody tr:hover {
+  color: #f6f6ff;
+  background-color: #418ab8;
+  cursor: pointer;
+}
 .table th.up {
   background-image: url("./images/up_arrow.png");
 }
@@ -51,27 +85,27 @@ caption {
 .table th.default {
   background-image: url("./images/default.png");
 }
-th.up,
-th.default,
-th.down {
+
+caption {
+  font-style: italic;
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+
+th.up {
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center right;
 }
 
-.table td {
-  border-top: 1px solid #ddd;
-  padding: 8px 20px;
+th.default {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 
-.table tbody tr:first-child td {
-  border-top: none;
-}
-
-.table tbody tr:nth-child(n) td {
-  background: #eff0f0;
-}
-
-.table tbody tr:nth-child(2n) td {
-  background: #fff;
-}
+th.down {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
+}/*# sourceMappingURL=index.css.map */
